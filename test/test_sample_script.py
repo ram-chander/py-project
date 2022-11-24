@@ -60,6 +60,7 @@ def test_sample_request(mocker):
     mocker.patch('lib.sample_script.getBody',return_value=json.dumps({"randombody":"random"}))
     mock_requests = mocker.patch('lib.sample_script.requests.post')
     mock_requests.return_value.ok = True
+    mock_requests.return_value.status_code=200
     mock_requests.return_value.text="sampleresponse"
 
     response = sample_request()

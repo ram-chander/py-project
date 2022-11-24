@@ -54,9 +54,9 @@ def sample_request():
     payload=getBody()
     print(url,headers,params,payload)
     response = requests.post(url, headers=headers, data=payload)
-    # print(response)
-    # print(response.status_code)
-    # print(response.text)
+    print(response)
+    print(response.status_code)
+    print(response.text)
     # print(json.loads(response.text))
     return response.text
 
